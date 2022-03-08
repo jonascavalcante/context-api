@@ -5,16 +5,27 @@ import { Context } from "../contexts/Context";
 
 const ShowData = () => {
 
-  const { name, age } = useContext(Context);
+  const { state, dispatch } = useContext(Context);
+
+  const handleNameChange = () => {
+    dispatch({
+      type: 'CHANGE_NAME',
+      payload: {
+        name: 'Pedro',
+      }
+    })
+  }
 
   return (
     <div>
       ShowData
       <br />
+      <button onClick={handleNameChange}>Change name to Pedro</button>
       <br />
-      Name: {name}
       <br />
-      Age: {age}
+      Name: {state.user.name}
+      <br />
+      Age: {state.user.age}
       <br />
       <br />
       <Link to='/'>Go to SignUp</Link>

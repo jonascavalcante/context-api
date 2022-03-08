@@ -5,16 +5,16 @@ import { Context } from "../contexts/Context";
 
 const SignUp = () => {
 
-  const { name, age } = useContext(Context);
+  const { state, dispatch } = useContext(Context);
 
   return(
     <div>
       SignUp 
       <br />
       <br />
-      Name: {name}
+      Name: {state.user.name}
       <br />
-      Age: {age}
+      Age: {state.user.age}
       <br />
       <br />
       <Link to='/showData'>Go to ShowData</Link>
