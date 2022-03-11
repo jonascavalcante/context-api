@@ -10,7 +10,7 @@ export const userInitialState: UserType = {
   age: 0,
 }
 
-export const UserReducer = (state: UserType, action: ReducerActionType) => {
+export const userReducer = (state: UserType, action: ReducerActionType) => {
   
   switch (action.type) {
     case "CHANGE_NAME":

@@ -1,6 +1,6 @@
 import { createContext, useReducer } from "react";
 
-import { userInitialState, UserReducer, UserType } from "../reducers/userReducer";
+import { userInitialState, userReducer, UserType } from "../reducers/userReducer";
 import { ReducerActionType } from "../types/reducerActionType";
 
 type initialStateType  = {
@@ -22,7 +22,7 @@ export const Context = createContext<ContextType>({
 });
 
 const mainReducer = (state: initialStateType , action: ReducerActionType) => ({
-  user: UserReducer(state.user, action)
+  user: userReducer(state.user, action)
 })
 
 export const ContextProvider: React.FC = ({ children }) => {
